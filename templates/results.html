@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sonuçlar</title>
+</head>
+<body>
+    <h2>{{ name }} için Arama Sonuçları</h2>
+    <h3>Telefon: {{ phone }}</h3>
+
+    <h4>🔍 Google Sosyal Medya Aramaları:</h4>
+    <ul>
+    {% for site, link in queries.items() %}
+        <li><a href="{{ link }}" target="_blank">{{ site }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <h4>🕵️ Olası Kullanıcı Adı Tespitleri:</h4>
+    <ul>
+    {% for link in usernames %}
+        <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <a href="/">↩ Yeni Arama</a>
+</body>
+</html>
