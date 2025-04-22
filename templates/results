@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sonuçlar</title>
+</head>
+<body>
+    <h2>Aranan Kişi: {{ name }}</h2>
+    <h3>Telefon: {{ phone }}</h3>
+    <ul>
+        {% for site, link in results.items() %}
+        <li><a href="{{ link }}" target="_blank">{{ site }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="/">Yeni Arama Yap</a>
+</body>
+</html>
