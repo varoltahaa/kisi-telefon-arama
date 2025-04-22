@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sonuçlar</title>
+</head>
+<body>
+    <h2>{{ name }} için Sonuçlar</h2>
+    <h3>Telefon: {{ phone }}</h3>
+
+    <h4>🔍 Google Sosyal Medya Aramaları:</h4>
+    <ul>
+    {% for site, link in queries.items() %}
+        <li><a href="{{ link }}" target="_blank">{{ site }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <h4>🕵️ Gerçek Profil Bağlantıları:</h4>
+    <ul>
+    {% for profile in profiles %}
+        <li>
+            {% if profile.exists %}
+                ✅ <a href="{{ profile.url }}" target="_blank">{{ profile.url }}</a>
+            {% else %}
+                ❌ {{ profile.url }}
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+
+    <a href="/">↩ Yeni Arama Yap</a>
+</body>
+</html>
