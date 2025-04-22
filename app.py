@@ -42,6 +42,6 @@ def search():
     return render_template('results.html', name=name, phone=phone, queries=google_queries, usernames=sherlock_links)
 
 
-
-port = int(os.environ.get("PORT", 5000))
-app.run(host="0.0.0.0", port=port)
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
